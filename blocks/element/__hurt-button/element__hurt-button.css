@@ -1,0 +1,21 @@
+.element__hurt-button {
+    box-sizing: content-box;
+    align-self: center;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 22px;
+    height: 19px;
+    border: 1px solid #ffffff;
+    background-image: url(../../../Images/hurtbtn.svg);
+    cursor: pointer;
+}
+
+.element__hurt-button:hover {
+    opacity: 0.5;
+}
+
+.element__hurt-button:active {
+    background-image: url(../../../Images/active-hurt.png);
+}

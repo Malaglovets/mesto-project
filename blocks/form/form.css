@@ -1,0 +1,12 @@
+.form {
+    margin: 34px auto 37px;
+    max-width: 358px;
+    align-self: center;
+}
+
+@media screen and (max-width: 740px) {
+    .form {
+        margin: 25px auto;
+        max-width: 238px;
+    }
+}
