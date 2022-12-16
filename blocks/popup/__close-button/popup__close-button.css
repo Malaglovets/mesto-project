@@ -7,7 +7,7 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    background-image: url(/../../../Images/CloseIcon.png);
+    background-image: url(../../../Images/CloseIcon.png);
     background-color: rgba(0, 0, 0, 0);
     background-position: center;
     background-repeat: no-repeat;

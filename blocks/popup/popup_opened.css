@@ -1,4 +1,4 @@
-.popup {
+.popup_opened {
     width: 100%;
     min-height: 100%;
     top: 0px;
@@ -6,7 +6,7 @@
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    display:flex;
+    display: flex;
     display: none;
     justify-content: center;
     align-items: center;
