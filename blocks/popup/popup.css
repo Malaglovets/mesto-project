@@ -1,4 +1,4 @@
-.popup_opened {
+.popup {
     width: 100%;
     min-height: 100%;
     top: 0px;
@@ -6,8 +6,11 @@
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    display: flex;
-    display: none;
     justify-content: center;
     align-items: center;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s linear;
+
 }

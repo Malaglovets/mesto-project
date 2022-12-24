@@ -8,11 +8,12 @@
     width: 22px;
     height: 19px;
     border: 1px solid #ffffff;
-    background-image: url(../../../Images/hurtbtn.svg);
+    background-image: url(../../../../Images/hurtbtn.svg);
     cursor: pointer;
 }
 
 .element__hurt-button:hover {
     opacity: 0.5;
 }
+
 
