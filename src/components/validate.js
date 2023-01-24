@@ -1,8 +1,5 @@
 export const enableValidation = ({ formSelector, ...rest }) => {
     Array.from(document.querySelectorAll(formSelector)).forEach(formElement => {
-        formElement.addEventListener('submit', (event) => {
-            event.preventDefault()
-        })
         setEventListeners(formElement, rest)
     })
 }

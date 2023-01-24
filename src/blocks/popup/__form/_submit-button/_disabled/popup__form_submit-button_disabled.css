@@ -1,12 +1,10 @@
 .popup__form_submit-button_disabled {
-    border: 1px solid rgba(0, 0, 0, 1);
-    background-color: #fff;
-    color: #000000;
-    border-radius: 2px;
-    pointer-events: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    opacity: .2;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.2);
+    cursor: default;
+}
+
+.popup__form_submit-button_disabled:hover {
+    opacity: 1;
 }

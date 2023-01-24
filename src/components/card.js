@@ -1,6 +1,6 @@
-import { template, elements, imagePopup, imagePopupImage, imagePopupCaption } from "./constants.js";
+import { template, elementsContainer, imagePopup, imagePopupImage, imagePopupCaption } from "./constants.js";
 import { initialCards } from "./constants";
-import { closePopup, openPopup } from "./utils.js";
+import { closePopup, openPopup } from "./modal.js";
 
 
 const createCard = (data) => {
@@ -11,7 +11,6 @@ const createCard = (data) => {
         evt.target.classList.toggle('element__like-button_active');
     });
     const image = card.querySelector('.element__image');
-    const closePicturePopupButton = document.querySelector('.popup_picture__close-button');
     image.src = data.link;
     image.alt = `Изображение ${data.name}`;
     image.addEventListener('click', () => {
@@ -19,15 +18,8 @@ const createCard = (data) => {
         imagePopupImage.alt = `Изображение ${data.name}`;
         imagePopupCaption.textContent = data.name;
         openPopup(imagePopup);
-      
-    });
     
-    closePicturePopupButton.addEventListener('click', function () {
-        closePopup(imagePopup);
     });
-
-    console.log(card);
-
     return card;
 }
 
@@ -36,7 +28,7 @@ const handleDeleteCard = (event) => {
 }
 
 const renderCard = (data) => {
-    elements.prepend(createCard(data));
+    elementsContainer.prepend(createCard(data));
 };
 
 for (let i = initialCards.length - 1; i >= 0; i--) {
