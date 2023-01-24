@@ -1,0 +1,19 @@
+.element__like-button {
+    align-self: center;
+    width: 22px;
+    height: 19px;
+    border: 1px solid #ffffff;
+    background-image: url(../../../Images/hurt.png);
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    padding-right: 3px;
+    box-sizing: content-box;
+}
+
+.element__like-button:hover {
+    opacity: 0.5;
+    /*transform: scale(1.3);*/
+}

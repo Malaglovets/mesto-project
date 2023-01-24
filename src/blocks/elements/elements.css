@@ -9,9 +9,13 @@
     column-gap: 17px;
 }
 
+@media screen and (max-width: 1024px) {
+    .elements {
+        max-width: 88.125vw;
+    }
+}
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 740px) {
     .elements {
         margin-top: 36px;
     }

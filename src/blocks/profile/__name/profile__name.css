@@ -4,7 +4,7 @@
     gap: 19px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 740px) {
     .profile__name {
         gap: 10px;
         padding-left: 28px;

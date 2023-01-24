@@ -1,7 +1,7 @@
 .profile__edit-button {
+    align-self: center;
     width: 24px;
     height: 24px;
-    align-self: center;
     border: 1px solid #ffffff;
     background-image: url(../../../Images/RychkaVector.png);
     background-color: transparent;
@@ -15,7 +15,7 @@
     opacity: 0.6;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 740px) {
     .profile__edit-button {
         height: 18px;
         width: 18px;
