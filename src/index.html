@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,14 +33,12 @@
     </div>
     <section class="popup profile-popup">
         <div class="popup__container">
+            <h3 class="popup__form_title">Редактировать профиль</h3>
             <form class="popup__form" name="profile-edit-form" novalidate>
-                <h3 class="popup__form_title">Редактировать профиль</h3>
-                <input type="text" id="popup__form_input" class="popup__form_input name-input" name="name" minlength="2"
-                    maxlength="40" required placeholder="Введите Ваше имя">
-                <span id="name-error" class="popup__form_input_error"></span>
-                <input type="text" id="popup__form_input" class="popup__form_input job-input" name="job" minlength="2" maxlength="200"
-                    required placeholder="Введите Вашу профессию">
-                <span id="job-error" class="form__job_error"></span>
+                <input type="text" id="popup-name-input" name="userEditName" class="popup__form_input popup__input_name" placeholder="Введите Ваше имя" minlength="2" maxlength="40" required>
+                <span class="popup__form_input_error popup-name-input_error"></span>
+                <input type="text" id="popup-profession-input" name="userEditProfession" class="popup__form_input popup__input_profession" placeholder="Введите Вашу профессию" required minlength="2" maxlength="200" required>
+                <span class="popup__form_input_error popup-profession-input_error"></span>
                 <button type="submit" class="popup__form_submit-button">Сохранить</button>
             </form>
             <button type="button" class="popup__close-button"></button>
@@ -49,14 +46,12 @@
     </section>
     <section class="popup popup_add-card">
         <div class="popup__container">
+            <h3 class="popup__form_title">Новое место</h3>
             <form class="popup__form form_place" name="place-add-form" novalidate>
-                <h3 class="popup__form_title">Новое место</h3>
-                <input type="text" id="popup__form_input" name="name" class="popup__form_input input-place" placeholder="Название"
-                    name="name" minlength="2" maxlength="30" required>
-                <span id="name-error" class="popup__form_input_error"></span>
-                <input type="url" id="popup__form_input" name="place-link" class="popup__form_input input-url"
-                    placeholder="Ссылка на картинку" name="job" required>
-                <span id="place-link-error" class="popup__form_input_error"></span>
+                <input type="text" id="popup-caption-input" name="cardName" class="popup__form_input popup__input_card_title" placeholder="Название" required minlength="2" maxlength="30">
+                <span class="popup__form_input_error popup-caption-input_error"></span>
+                <input type="url" id="popup-link-input" name="cardLink" class="popup__form_input popup__input_card_link" placeholder="Сcылка на картинку" required>
+                <span class="popup__form_input_error popup-link-input_error"></span>
                 <button type="submit" class="popup__form_submit-button popup__form_submit-button_disabled form__submit-btn_place"
                     disabled>Создать</button>
             </form>

@@ -1,5 +1,8 @@
 export const enableValidation = ({ formSelector, ...rest }) => {
     Array.from(document.querySelectorAll(formSelector)).forEach(formElement => {
+        formElement.addEventListener('submit', (event) => {
+            event.preventDefault()
+        })
         setEventListeners(formElement, rest)
     })
 }
@@ -22,31 +25,30 @@ const setEventListeners = (formElement, { inputSelector, submitButtonSelector, i
     })
 }
 
-const checkInputValidity = (formElement, inputElement, {inputErrorClass, errorClass}) => {
-    const errorElement = formElement.querySelector(`.${inputElement.id}_error`)
-    if (!inputElement.validity.valid) {
-        // Если поле не проходит валидацию, покажем ошибку
-        showInputError(formElement, inputElement, errorElement, inputErrorClass, errorClass, inputElement.validationMessage);
-    } else {
-        // Если проходит, скроем
-        hideInputError(formElement, inputElement, errorElement, inputErrorClass, errorClass);
-    }
-};
-
-// Функция, которая добавляет класс с ошибкой
 const showInputError = (formElement, inputElement, errorElement, inputErrorClass, errorClass, errorMessage) => {
+    
     inputElement.classList.add(inputErrorClass)
     errorElement.classList.add(errorClass)
     errorElement.textContent = errorMessage
 }
 
-// Функция, которая удаляет класс с ошибкой
 const hideInputError = (formElement, inputElement, errorElement, inputErrorClass, errorClass) => {
-
+   
     inputElement.classList.remove(inputErrorClass)
     errorElement.classList.remove(errorClass)
     errorElement.textContent = ''
 }
+
+const checkInputValidity = (formElement, inputElement, { inputErrorClass, errorClass }) => {
+    const errorElement = formElement.querySelector(`.${inputElement.id}_error`)
+
+    if (inputElement.validity.valid) {
+        hideInputError(formElement, inputElement, errorElement, inputErrorClass, errorClass)
+    } else {
+        showInputError(formElement, inputElement, errorElement, inputErrorClass, errorClass, inputElement.validationMessage)
+    }
+}
+
 
 const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
     if (hasValidInput(inputList)) {
@@ -56,7 +58,6 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
     }
 }
 
-// Функция, которая проверяет валидность поля
 const hasValidInput = (inputList) => {
     return inputList.some(inputElement => {
         return !inputElement.validity.valid
@@ -64,6 +65,7 @@ const hasValidInput = (inputList) => {
 }
 
 const enableButton = (buttonElement, inactiveButtonClass) => {
+
     buttonElement.classList.remove(inactiveButtonClass)
     buttonElement.disabled = false
 }

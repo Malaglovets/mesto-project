@@ -13,12 +13,13 @@ const profileAddButton = document.querySelector('.profile__add-button');
 const closePlacePopup = document.querySelector('.popup_place__close-button');
 const body = document.querySelector('.body');
 const popupForm = document.querySelector('.popup__form');
-const nameInput = popupForm.querySelector('.name-input');
-const jobInput = popupForm.querySelector('.job-input');
+const nameInput = popupForm.querySelector('.popup__input_name');
+const jobInput = popupForm.querySelector('.popup__input_profession');
 const nameField = document.querySelector('.profile__title');
 const jobField = document.querySelector('.profile__subtitle');
-const inputPlaceName = placeForm.querySelector('.input-place');
-const inputPlaceUrl = placeForm.querySelector('.input-url');
+const inputPlaceName = placeForm.querySelector('.popup__input_card_title');
+const inputPlaceUrl = placeForm.querySelector('.popup__input_card_link');
+
 
 export {buttonEditProfile, closePopupButton, profileAddButton, closePlacePopup, body, inputPlaceUrl, inputPlaceName, popupForm, nameInput, jobInput, nameField, jobField}
 
