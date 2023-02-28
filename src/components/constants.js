@@ -4,6 +4,7 @@ export const imagePopup = document.querySelector('.popup_picture');
 export const imagePopupImage = imagePopup.querySelector('.popup__image');
 export const imagePopupCaption = imagePopup.querySelector('.popup__caption');
 export const popupElement = document.querySelector('.popup');
+export const popups = document.querySelectorAll('.popup')
 export const profilePopup = document.querySelector('.profile-popup');
 export const placeForm = document.querySelector('.popup_add-card');
 export const cardForm = placeForm.querySelector('.form_place');

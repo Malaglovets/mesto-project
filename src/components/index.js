@@ -3,20 +3,23 @@ import '../../src/pages/index.css';
 import { enableValidation } from './validate.js';
 import { openPopup, closePopup} from './modal.js';
 import { renderCard } from './card.js';
-import { buttonEditProfile, closePopupButton, profileAddButton, placeForm, closePlacePopup, body, cardForm, inputPlaceUrl, inputPlaceName, popupForm, nameInput, jobInput, nameField, jobField, profilePopup, imagePopup, popupElement} from './constants.js'
+import { popups, buttonEditProfile, profileAddButton, placeForm, body, cardForm, inputPlaceUrl, inputPlaceName, popupForm, nameInput, jobInput, nameField, jobField, profilePopup} from './constants.js'
 
 
-const closePicturePopupButton = document.querySelector('.popup_picture__close-button'); 
-closePicturePopupButton.addEventListener('click', function () {
-  closePopup(imagePopup);
-});
+
+popups.forEach((popup) => {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup)
+        }
+        if (evt.target.classList.contains('popup__close-button')) {
+          closePopup(popup)
+        }
+    })
+})
 
 profileAddButton.addEventListener('click', function () {
   openPopup(placeForm);
-})
-
-closePlacePopup.addEventListener('click', function () {
-  closePopup(placeForm);
 })
 
 cardForm.addEventListener('submit', (event) => {
@@ -26,7 +29,6 @@ cardForm.addEventListener('submit', (event) => {
     renderCard({ name, link });
     closePopup(placeForm);
     event.target.reset();
-    cardForm.reset();
 });
 
 buttonEditProfile.addEventListener('click', function () {
@@ -34,30 +36,6 @@ buttonEditProfile.addEventListener('click', function () {
     nameInput.value = nameField.textContent;
     jobInput.value = jobField.textContent;
 });
-
-closePopupButton.addEventListener('click', function () {
-    closePopup(profilePopup);
-});
-
-placeForm.addEventListener('click', function (evt) {
-  if (evt.target.classList.contains('popup_opened')) {
-    closePopup(placeForm); 
- }
-})
-
-profilePopup.addEventListener('click', function (evt) {
-  if (evt.target.classList.contains('popup_opened')) { 
-    closePopup(profilePopup);
- }
-})
-
-imagePopup.addEventListener('click', function (evt) {
-  if (evt.target.classList.contains('popup_opened')) {
-    closePopup(imagePopup);
- }
-})
-
-
 
 enableValidation({
    formSelector: '.popup__form',
@@ -67,6 +45,7 @@ enableValidation({
    inputErrorClass: 'popup__form_input_error',
    errorClass: 'popup__form_error'
 });
+
 
 
 

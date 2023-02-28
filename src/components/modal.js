@@ -1,4 +1,4 @@
-import { popupElement, body, placeForm, profilePopup, imagePopup, popupForm, nameField, jobField, nameInput, jobInput} from "./constants.js";
+import { popupElement, body, placeForm, profilePopup, imagePopup, popupForm, nameField, jobField, nameInput, jobInput, popups} from "./constants.js";
 import { renderCard } from "./card.js";
 
 
@@ -25,9 +25,9 @@ export function handleFormSubmit(evt) {
 
 export function esc(evt) {
     if (evt.key === 'Escape') {
-        closePopup(placeForm);
-        closePopup(profilePopup);
-        closePopup(imagePopup);
+       const openedPopup = document.querySelector('.popup_opened');
+        closePopup(openedPopup);
+
     }
   }
   
