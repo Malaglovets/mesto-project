@@ -20,36 +20,56 @@ const nameField = document.querySelector('.profile__title');
 const jobField = document.querySelector('.profile__subtitle');
 const inputPlaceName = placeForm.querySelector('.popup__input_card_title');
 const inputPlaceUrl = placeForm.querySelector('.popup__input_card_link');
-
+export const popupAvatar = document.querySelector('.popup_avatar');
+export const avaFormInput = document.querySelector('.popup-avatar-input');
+export const profileAddButtonAvatar = document.querySelector('.pofile__avatar-edit');
+export const profileAvatar = document.querySelector('.profile__avatar');
+export const popupFormAvatar = document.querySelector('.popup__form_avatar');
+export const popupProfileSaveButton = document.querySelector('.form__submit-btn_avatar');
+export const avatarInput = document.querySelector('.popup__form_input');
+export const popupDeleteCard = document.querySelector('.popup__delete-card');
+export const confirmCardDelete = document.querySelector('.form__submit-btn_delete-card');
+export const popupSaveButtonProfile = document.querySelector('.popup__save-button_profile');
+export const popupSaveButtonPlace = document.querySelector('.form__submit-btn_place');
+export const avatarLink = document.querySelector('.popup__input_avatar_link');
 
 export {buttonEditProfile, closePopupButton, profileAddButton, closePlacePopup, body, inputPlaceUrl, inputPlaceName, popupForm, nameInput, jobInput, nameField, jobField}
+//  import { getInitialCards } from "./api.js";
+// // export const initialCards = getInitialCards(); /*[
+//   {
+//     name: 'Архыз',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+//   },
+//   {
+//     name: 'Челябинская область',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+//   },
+//   {
+//     name: 'Иваново',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+//   },
+//   {
+//     name: 'Камчатка',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+//   },
+//   {
+//     name: 'Холмогорский район',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+//   },
+//   {
+//     name: 'Байкал',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+//  }
+// ];*/ 
 
-export const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+//Авторизация
+export const config = {
+  baseUrl: 'https://nomoreparties.co/v1/wbf-cohort-4',
+  headers: {
+    authorization: '86d1635b-058c-498b-9913-3fed90fa0948',
+    'Content-Type': 'application/json'
   }
-]; 
+};
 
 
 
