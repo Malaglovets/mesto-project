@@ -114,7 +114,6 @@ profileAddButtonAvatar.addEventListener('click', function () {
   export function serverDeleteCard (evt) {
     renderLoading(true, confirmCardDelete, 'Да', 'Удаление...')
     const deleteCardId = popupDeleteCard.id
-    // console.log(popupDeleteCard.id);
     deleteCard(popupDeleteCard.id)
       .then((res) => {
         popupDeleteCard.id = ''

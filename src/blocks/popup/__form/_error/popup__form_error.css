@@ -3,5 +3,6 @@
     font-size: 12px;
     line-height: 15px;
     margin: 0;
-
+    display: block;
+    min-height: 30px;
 }

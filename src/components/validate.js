@@ -28,14 +28,12 @@ const setEventListeners = (formElement, { inputSelector, submitButtonSelector, i
 const showInputError = (formElement, inputElement, errorElement, inputErrorClass, errorClass, errorMessage) => {
     
     inputElement.classList.add(inputErrorClass)
-    errorElement.classList.add(errorClass)
     errorElement.textContent = errorMessage
 }
 
 const hideInputError = (formElement, inputElement, errorElement, inputErrorClass, errorClass) => {
    
     inputElement.classList.remove(inputErrorClass)
-    errorElement.classList.remove(errorClass)
     errorElement.textContent = ''
 }
 

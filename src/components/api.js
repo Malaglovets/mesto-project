@@ -7,7 +7,7 @@ import { config, jobInput, nameInput, nameField, jobField, inputPlaceUrl, inputP
     }
     return Promise.reject(`Ошибка ${res.status}`);
 };
-// console.log(getInitialCards);
+
 export const getInitialCards = () => {
     return fetch(`${config.baseUrl}/cards`, {
         headers: config.headers,    
@@ -76,11 +76,7 @@ export const removeLike = (id) => {
  }
 
  export const deleteCard = (id) => {
-    console.log(`${config.baseUrl}/cards/${id}}`, {
-        method: 'DELETE',
-        headers: config.headers,
-    });
-    return fetch(`${config.baseUrl}/cards/${id}}`, {
+    return fetch(`${config.baseUrl}/cards/${id}`, {
         method: 'DELETE',
         headers: config.headers,
     })

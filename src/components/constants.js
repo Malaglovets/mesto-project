@@ -25,12 +25,12 @@ export const avaFormInput = document.querySelector('.popup-avatar-input');
 export const profileAddButtonAvatar = document.querySelector('.pofile__avatar-edit');
 export const profileAvatar = document.querySelector('.profile__avatar');
 export const popupFormAvatar = document.querySelector('.popup__form_avatar');
-export const popupProfileSaveButton = document.querySelector('.form__submit-btn_avatar');
+export const popupProfileSaveButton = document.querySelector('.popup__form_submit-buttonn_avatar');
 export const avatarInput = document.querySelector('.popup__form_input');
 export const popupDeleteCard = document.querySelector('.popup__delete-card');
-export const confirmCardDelete = document.querySelector('.form__submit-btn_delete-card');
+export const confirmCardDelete = document.querySelector('.popup__form_submit-btn_delete-card');
 export const popupSaveButtonProfile = document.querySelector('.popup__save-button_profile');
-export const popupSaveButtonPlace = document.querySelector('.form__submit-btn_place');
+export const popupSaveButtonPlace = document.querySelector('.popup__form_submit-btn_place');
 export const avatarLink = document.querySelector('.popup__input_avatar_link');
 
 export {buttonEditProfile, closePopupButton, profileAddButton, closePlacePopup, body, inputPlaceUrl, inputPlaceName, popupForm, nameInput, jobInput, nameField, jobField}
