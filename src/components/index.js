@@ -1,12 +1,25 @@
 import '../../src/pages/index.css';
 
 import { enableValidation } from './validate.js';
-import { openPopup, closePopup, renderLoading } from './modal.js';
-import { createCard, renderCard, serverDeleteCard } from './card.js';
-import { jobField, nameField, popups, profileAvatar, nameInput, jobInput, confirmCardDelete } from './constants.js'
+import { openPopup, closePopup } from './modal.js';
+import { createCard, renderCard, serverDeleteCard, handleSubmitCard} from './card.js';
+import { jobField, nameField, popups, profileAvatar, nameInput, jobInput, confirmCardDelete, profileAddButton, profileAddButtonAvatar, popupAvatar, placeForm, buttonEditProfile, profilePopup, popupFormPlace } from './constants.js'
 import { getInitialCards, getUser, addUser, addCard, addLike, removeLike, addAvatar, deleteCard } from './api.js';
 
 
+buttonEditProfile.addEventListener('click', function () {
+    openPopup(profilePopup);
+    nameInput.value = nameField.textContent;
+    jobInput.value = jobField.textContent;
+});
+
+profileAddButton.addEventListener('click', function () {
+    openPopup(placeForm);
+  })
+
+profileAddButtonAvatar.addEventListener('click', function () {
+    openPopup(popupAvatar);
+  })
 
 popups.forEach((popup) => {
     popup.addEventListener('mousedown', (evt) => {
@@ -27,6 +40,7 @@ enableValidation({
    inputErrorClass: 'popup__form_input_error',
    errorClass: 'popup__form_error'
 });
+ popupFormPlace.addEventListener('submit', handleSubmitCard);
 
  confirmCardDelete.addEventListener('click', () => {serverDeleteCard()});
 

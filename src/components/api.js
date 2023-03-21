@@ -1,4 +1,4 @@
-import { config, jobInput, nameInput, nameField, jobField, inputPlaceUrl, inputPlaceName, avaFormInput, avatarInput, avatarLink, deleteCardId, cardForm, id, popupDeleteCard } from "./constants.js";
+import { config } from "./constants.js";
 
 
   const getResponse = (res) => {
@@ -69,7 +69,7 @@ export const removeLike = (id) => {
     method: 'PATCH',
     headers: config.headers,
     body: JSON.stringify({
-        avatar: avatarLink.value
+        avatar: avatar
     })
    })
    .then(getResponse)
@@ -80,9 +80,5 @@ export const removeLike = (id) => {
         method: 'DELETE',
         headers: config.headers,
     })
-    .then((res) => {
-        if(!res.ok){
-            return Promise.reject(`Ошибка ${res.status}`);
-        }
-    })
+    .then(getResponse)  
  };

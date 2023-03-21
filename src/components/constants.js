@@ -7,13 +7,14 @@ export const popupElement = document.querySelector('.popup');
 export const popups = document.querySelectorAll('.popup')
 export const profilePopup = document.querySelector('.profile-popup');
 export const placeForm = document.querySelector('.popup_add-card');
-export const cardForm = placeForm.querySelector('.form_place');
 const buttonEditProfile = document.querySelector('.profile__edit-button');
 const closePopupButton = document.querySelector('.popup__close-button');
 const profileAddButton = document.querySelector('.profile__add-button');
 const closePlacePopup = document.querySelector('.popup_place__close-button');
 const body = document.querySelector('.body');
+const profileForm  = document.querySelector('.popup__form_profile');
 const popupForm = document.querySelector('.popup__form');
+export const popupFormPlace = document.querySelector('.popup__form_place');
 const nameInput = popupForm.querySelector('.popup__input_name');
 const jobInput = popupForm.querySelector('.popup__input_profession');
 const nameField = document.querySelector('.profile__title');
@@ -33,7 +34,7 @@ export const popupSaveButtonProfile = document.querySelector('.popup__save-butto
 export const popupSaveButtonPlace = document.querySelector('.popup__form_submit-btn_place');
 export const avatarLink = document.querySelector('.popup__input_avatar_link');
 
-export {buttonEditProfile, closePopupButton, profileAddButton, closePlacePopup, body, inputPlaceUrl, inputPlaceName, popupForm, nameInput, jobInput, nameField, jobField}
+export {buttonEditProfile, closePopupButton, profileAddButton, closePlacePopup, body, inputPlaceUrl, inputPlaceName, profileForm, popupForm, nameInput, jobInput, nameField, jobField}
 //  import { getInitialCards } from "./api.js";
 // // export const initialCards = getInitialCards(); /*[
 //   {

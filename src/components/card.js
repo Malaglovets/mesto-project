@@ -1,7 +1,9 @@
 import { template, elementsContainer, imagePopup, imagePopupImage, imagePopupCaption } from "./constants.js";
-import { profileAddButton, placeForm, cardForm, inputPlaceName, inputPlaceUrl, buttonEditProfile, profilePopup, nameInput, jobInput, nameField, jobField, profileAddButtonAvatar, popupAvatar, popupElementAvatar,  popupProfileSaveButton, popupDeleteCard, confirmCardDelete, popupSaveButtonPlace } from "./constants.js";
-import { closePopup, openPopup, renderLoading } from "./modal.js";
+import { placeForm, inputPlaceName, inputPlaceUrl, buttonEditProfile, profilePopup, nameInput, jobInput, nameField, jobField, profileAddButtonAvatar, popupAvatar, popupElementAvatar,  popupProfileSaveButton, popupDeleteCard, confirmCardDelete, popupSaveButtonPlace, profileAddButton, popupFormPlace} from "./constants.js";
+import { closePopup, openPopup } from "./modal.js";
 import { getInitialCards, getUser, addUser, deleteCard, addCard, addLike, removeLike } from "./api.js";
+import { renderLoading } from "./utils.js";
+
 
 export const createCard = (data)  => {
     
@@ -13,7 +15,6 @@ export const createCard = (data)  => {
     trashElement.addEventListener('click', handleDeleteCard);
     disableDeleteCardButton(data, trashElement);
 
-    
     const image = card.querySelector('.element__image');
     image.src = data.link; 
     image.alt = `Изображение ${data.name}`;
@@ -30,6 +31,7 @@ export const createCard = (data)  => {
 
     return card;
     }
+
     const likeCard = (evt) => {
       const cardEl = evt.target.closest('.element');
       const cardCounter = cardEl.querySelector('.element__like-number');
@@ -74,42 +76,26 @@ export const createCard = (data)  => {
         trashElement.classList.add('element__delete-card_disabled')
       }
     }
-
-
-profileAddButton.addEventListener('click', function () {
-    openPopup(placeForm);
-  })
-
-
-profileAddButtonAvatar.addEventListener('click', function () {
-    openPopup(popupAvatar);
-  })
-
-  cardForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      renderLoading(true, popupSaveButtonPlace, 'Создать', 'Создание...');
-      const name = inputPlaceName.value;
-      const link = inputPlaceUrl.value;
-      addCard({ name, link })
-      .then((res) => {
+   
+    export function handleSubmitCard(evt) {
+      evt.preventDefault();
+      renderLoading(true, popupSaveButtonPlace, 'Создать', 'Создание...')
+      addCard({
+        name: `${inputPlaceName.value}`,
+        link: `${inputPlaceUrl.value}`
+      })
+        .then((res) => {
           renderCard(res)
-      })
-      .then(() => closePopup(placeForm))
-      .catch((err) => {
-          console.log(err);
-      })
-      .finally((res) => {
-          renderLoading(false, popupSaveButtonPlace, 'Создать', 'Создание...');
-      })
-
-       event.target.reset();
-  });
-
-  buttonEditProfile.addEventListener('click', function () {
-      openPopup(profilePopup);
-      nameInput.value = nameField.textContent;
-      jobInput.value = jobField.textContent;
-  });
+          evt.target.reset();
+          closePopup(placeForm);
+        })
+        .catch((err) => {
+          console.log(`Ошибка: ${err}`)
+        })
+        .finally(() => {
+          renderLoading(false, popupSaveButtonPlace, 'Создать', 'Создание...')
+        })
+    }
 
   export function serverDeleteCard (evt) {
     renderLoading(true, confirmCardDelete, 'Да', 'Удаление...')
