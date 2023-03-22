@@ -33,6 +33,7 @@
 .popup__form_input{border:none;border-bottom:1px solid rgba(0,0,0,.2);font-size:14px;font-weight:400;line-height:17px;margin:10px 0 0;padding:0 0 13px;width:100%}.popup__form_input:first-child{margin:0}
 .popup__form_delete-card{margin-top:20px}
 .popup__form_submit-button{background-color:#000;border:none;border-radius:2px;color:#fff;cursor:pointer;font-size:18px;font-weight:400;height:50px;line-height:22px;margin:28px auto 0;padding:0;text-align:center;transition:opacity .3s;width:358px}.popup__form_submit-button:hover{opacity:.6}@media screen and (max-width:740px){.popup__form_submit-button{font-size:14px;line-height:17px;margin-top:0;width:238px}}
+.popup__form_submit-button_delete-card{background-color:#000;border:none;border-radius:2px;color:#fff;cursor:pointer;font-size:18px;font-weight:400;height:50px;line-height:22px;margin:28px auto 0;padding:0;text-align:center;transition:opacity .3s;width:358px}.popup__form_submit-button_delete-card:hover{opacity:.6}@media screen and (max-width:740px){.popup__form_submit-button_delete-card{font-size:14px;line-height:17px;margin-top:0;width:238px}}
 .popup__form_submit-button_disabled{background-color:#fff;border:1px solid rgba(0,0,0,.2);color:rgba(0,0,0,.2);cursor:default}.popup__form_submit-button_disabled:hover{opacity:1}
 .popup__form_error{color:red;display:block;font-size:12px;line-height:15px;margin:0;min-height:30px}
 .popup__form_input_error{border-bottom:1px;margin:5px 0 0;min-height:15px}
