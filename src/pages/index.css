@@ -71,6 +71,8 @@
 
 @import '../blocks/popup/__form/_submit-button/popup__form_submit-button.css';
 
+@import '../blocks/popup/__form/_submit-button/_delete-card/popup__form_submit-button_delete-card.css';
+
 @import '../blocks/popup/__form/_submit-button/_disabled/popup__form_submit-button_disabled.css';
 
 @import '../blocks/popup/__form/_error/popup__form_error.css';

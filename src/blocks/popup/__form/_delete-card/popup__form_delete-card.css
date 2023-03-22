@@ -1,3 +1,16 @@
 .popup__form_delete-card {
     margin-top: 20px;
 }
+/* .popup__form_delete-card {
+    display: flex;
+    width: calc(100% - 72px);
+    flex-direction: column;
+    margin: 54px auto 37px auto; 
+}
+
+@media screen and (max-width: 740px) {
+    .popup__form_delete-card {
+        width: calc(100% - 44px);
+       
+    }
+} */

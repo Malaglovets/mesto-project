@@ -4,16 +4,14 @@ import { addUser, addAvatar } from "./api.js";
 import { idUser } from "./index.js";
 import { renderLoading } from "./utils.js";
 
-
-
 export function openPopup(popupElement) {
-    popupElement.classList.add("popup_opened");
-    body.addEventListener('keydown', handleEscape);
+  popupElement.classList.add("popup_opened");
+  body.addEventListener("keydown", handleEscape);
 }
 
 export function closePopup(popupElement) {
-    popupElement.classList.remove("popup_opened");
-    body.removeEventListener('keydown', handleEscape);
+  popupElement.classList.remove("popup_opened");
+  body.removeEventListener("keydown", handleEscape);
 }
 
 // export function handleProfileFormSubmit(evt) {
@@ -22,11 +20,11 @@ export function closePopup(popupElement) {
 //         closePopup(profilePopup);
 //   }
 
-  profileForm.addEventListener('submit', function (evt) {
-    evt.preventDefault;
-    renderLoading(true, popupSaveButtonProfile);
-    addUser(nameInput.value, jobInput.value)
-    .then(res =>  {
+profileForm.addEventListener("submit", function (evt) {
+  evt.preventDefault;
+  renderLoading(true, popupSaveButtonProfile);
+  addUser(nameInput.value, jobInput.value)
+    .then((res) => {
       nameField.id = res._id;
       nameField.textContent = res.name;
       jobInput.textContent = res.about;
@@ -34,37 +32,34 @@ export function closePopup(popupElement) {
       closePopup(profilePopup);
     })
     .catch((err) => {
-      console.log(`Ошибка: ${err}`)
+      console.log(`Ошибка: ${err}`);
     })
     .finally(() => {
-      renderLoading(false, popupSaveButtonProfile)
-    })
+      renderLoading(false, popupSaveButtonProfile);
+    });
 });
 
 export function handleEscape(evt) {
-    if (evt.key === 'Escape') {
-       const openedPopup = document.querySelector('.popup_opened');
-        closePopup(openedPopup);
-
-    }
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
   }
-  popupFormAvatar.addEventListener('submit', handleFormSubmitAvatar);
+}
 
-  export function handleFormSubmitAvatar(evt) {
-    evt.preventDefault();
-    renderLoading(true, popupProfileSaveButton)
-    addAvatar(avatarLink.value)
-      .then((res) => {
-        profileAvatar.src = res.avatar,
-          evt.target.reset();
-        closePopup();
-      })
-      .catch((err) => {
-        console.log(`Ошибка: ${err}`)
-      })
-      .finally(() => {
-        renderLoading(false, popupProfileSaveButton)
-      })
-  }
+popupFormAvatar.addEventListener("submit", handleFormSubmitAvatar);
 
-
+export function handleFormSubmitAvatar(evt) {
+  evt.preventDefault();
+  renderLoading(true, popupProfileSaveButton);
+  addAvatar(avatarLink.value)
+    .then((res) => {
+      (profileAvatar.src = res.avatar), evt.target.reset();
+      closePopup(popupAvatar);
+    })
+    .catch((err) => {
+      console.log(`Ошибка: ${err}`);
+    })
+    .finally(() => {
+      renderLoading(false, popupProfileSaveButton);
+    });
+}

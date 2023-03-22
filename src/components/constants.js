@@ -29,12 +29,22 @@ export const popupFormAvatar = document.querySelector('.popup__form_avatar');
 export const popupProfileSaveButton = document.querySelector('.popup__form_submit-buttonn_avatar');
 export const avatarInput = document.querySelector('.popup__form_input');
 export const popupDeleteCard = document.querySelector('.popup__delete-card');
-export const confirmCardDelete = document.querySelector('.popup__form_submit-btn_delete-card');
+export const confirmCardDelete = document.querySelector('.popup__form_submit-button_delete-card');
 export const popupSaveButtonProfile = document.querySelector('.popup__save-button_profile');
 export const popupSaveButtonPlace = document.querySelector('.popup__form_submit-btn_place');
 export const avatarLink = document.querySelector('.popup__input_avatar_link');
-
 export {buttonEditProfile, closePopupButton, profileAddButton, closePlacePopup, body, inputPlaceUrl, inputPlaceName, profileForm, popupForm, nameInput, jobInput, nameField, jobField}
+
+//Авторизация
+export const config = {
+  baseUrl: 'https://nomoreparties.co/v1/wbf-cohort-4',
+  headers: {
+    authorization: '86d1635b-058c-498b-9913-3fed90fa0948',
+    'Content-Type': 'application/json'
+  }
+};
+
+
 //  import { getInitialCards } from "./api.js";
 // // export const initialCards = getInitialCards(); /*[
 //   {
@@ -63,14 +73,6 @@ export {buttonEditProfile, closePopupButton, profileAddButton, closePlacePopup, 
 //  }
 // ];*/ 
 
-//Авторизация
-export const config = {
-  baseUrl: 'https://nomoreparties.co/v1/wbf-cohort-4',
-  headers: {
-    authorization: '86d1635b-058c-498b-9913-3fed90fa0948',
-    'Content-Type': 'application/json'
-  }
-};
 
 
 

@@ -10,7 +10,7 @@ export const enableValidation = ({ formSelector, ...rest }) => {
 const setEventListeners = (formElement, { inputSelector, submitButtonSelector, inactiveButtonClass, ...rest }) => {
     const inputList = Array.from(formElement.querySelectorAll(inputSelector));
     const buttonElement = formElement.querySelector(submitButtonSelector);
-
+    // disableButton(buttonElement, inactiveButtonClass);
     formElement.addEventListener('reset', () => {
         setTimeout(() => {
             disableButton(buttonElement, inactiveButtonClass);
